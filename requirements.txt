@@ -1,0 +1,7 @@
+opencv-python
+pandas
+pytest
+tqdm
+matplotlib
+imagehash
+Pillow

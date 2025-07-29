@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# VS Code
+.vscode/
+
+# Test output / temp
+output/
+*.jpg
+*.mp4
+*.avi
+*.json
+*.md.html
+
+# pytest cache
+.cache/
+.pytest_cache/
+
+# Docker
+*.dockerfile
+*.tar
+*.img
+
+# Notebooks
+*.ipynb_checkpoints
+
+# Reports
+report.md
+submission_report.md
+
+# System
+.DS_Store
+Thumbs.db
+
+# GitHub workflows artifacts (if any)
+artifacts/
