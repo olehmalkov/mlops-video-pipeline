@@ -7,11 +7,22 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 from extractor import extract_frames
 
 
+def create_dummy_video(video_path, frame_count=60, width=100, height=100):
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    video = cv2.VideoWriter(video_path, fourcc, 1, (width, height))
+    for i in range(frame_count):
+        frame = np.random.randint(0, 255, (height, width, 3), np.uint8)
+        cv2.putText(frame, str(i), (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+        video.write(frame)
+    video.release()
+
+
 def test_frame_extraction(tmp_path):
-    video_path = "timelapse_test.mp4"  # перевір, що файл є
+    video_path = str(tmp_path / "test.mp4")
+    create_dummy_video(video_path, frame_count=60)
     output_dir = tmp_path / "frames"
     frames = extract_frames(video_path, str(output_dir), step=30)
-    assert len(frames) > 0
+    assert len(frames) == 2
     for frame in frames:
         assert os.path.exists(frame)
 

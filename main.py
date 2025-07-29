@@ -1,6 +1,6 @@
 from extractor import extract_frames
 from detector import run_detection
-from report_generator import generate_report
+from reporter import generate_report
 import argparse
 import os
 import time

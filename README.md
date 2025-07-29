@@ -62,10 +62,25 @@ make clean
 - `extractor.py` — frame extraction from video (with deduplication and validation)
 - `detector.py` — mock object detection
 - `reporter.py` — report generation
-- `output/` — generated images, metadata, and report
+- `__init__.py` — package initializer
+- `requirements.txt` — project dependencies
+- `output/` — (generated) images, metadata, and report
 - `tests/` — unit tests for all modules (including deduplication)
 - `Makefile` — automation for build/run/test/clean
 - `Dockerfile` — containerization
+- `.github/` — CI/CD workflows
+
+---
+
+## Dependencies
+The project dependencies are listed in `requirements.txt`:
+- `opencv-python`
+- `pandas`
+- `pytest`
+- `tqdm`
+- `matplotlib`
+- `imagehash`
+- `Pillow`
 
 ---
 
